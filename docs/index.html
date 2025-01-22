@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eszett</title>
+
+        <style>
+            #richTextbox {
+                width: 100%;
+                overflow-wrap: break-word; /* Prevent breaking in the middle of words */
+                white-space: pre-wrap; /* Preserve line breaks and spaces */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Eszett</h1>
+        <textarea id="richTextbox" rows="10" style="display: block;" oninput="updateLabel()"></textarea>
+        <pre id="outputLabel" style="margin-top: 20px; font-weight: bold;"></pre>
+    </body>
+    <script>
+
+        function replaceEszett(text) {
+            // Use a regular expression to replace lowercase and uppercase eszett
+            return text
+                .replace(/ß/g, 'ss') // Replace lowercase ß with ss
+                .replace(/ẞ/g, 'SS'); // Replace uppercase ẞ with SS
+        }
+
+        function updateLabel() {
+            const richTextbox = document.getElementById("richTextbox");
+            const label = document.getElementById("outputLabel");
+            label.textContent = replaceEszett(richTextbox.value);
+        }
+    </script>
+</html>
