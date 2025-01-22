@@ -6,7 +6,9 @@
         <title>Eszett</title>
         <link rel="stylesheet" href="https://johannes-programming.online/styles.css">
         <style>
-            #richTextbox {
+            textarea.eszett {
+                rows:"10"; 
+                style:"display: block;";
                 width: 100%;
                 overflow-wrap: break-word; /* Prevent breaking in the middle of words */
                 white-space: pre-wrap; /* Preserve line breaks and spaces */
@@ -15,8 +17,8 @@
     </head>
     <body>
         <h1>Eszett</h1>
-        <textarea id="richTextbox" rows="10" style="display: block;" oninput="updateLabel()"></textarea>
-        <pre id="outputLabel" style="margin-top: 20px; font-weight: bold;"></pre>
+        <textarea class="eszett" id="richTextbox" oninput="updateLabel();"></textarea>
+        <textarea class="eszett" id="outputLabel" readonly></textarea>
     </body>
     <script>
 
