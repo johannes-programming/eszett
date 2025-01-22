@@ -5,34 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Eszett</title>
         <link rel="stylesheet" href="https://johannes-programming.online/styles.css">
-        <style>
-            textarea.eszett {
-                height: 20em; 
-                style:"display: block;";
-                width: 100%;
-                overflow-wrap: break-word; /* Prevent breaking in the middle of words */
-                white-space: pre-wrap; /* Preserve line breaks and spaces */
-            }
-        </style>
+        <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
         <h1>ESZETT</h1>
-        <textarea class="eszett" id="richTextbox" oninput="updateLabel();"></textarea>
-        <textarea class="eszett" id="outputLabel" readonly></textarea>
+        <textarea class="eszett" id="inRichtextbox" oninput="updateLabel();"></textarea>
+        <textarea class="eszett" id="outRichtextbox" readonly></textarea>
     </body>
-    <script>
-
-        function replaceEszett(text) {
-            // Use a regular expression to replace lowercase and uppercase eszett
-            return text
-                .replace(/ß/g, 'ss') // Replace lowercase ß with ss
-                .replace(/ẞ/g, 'SS'); // Replace uppercase ẞ with SS
-        }
-
-        function updateLabel() {
-            const richTextbox = document.getElementById("richTextbox");
-            const label = document.getElementById("outputLabel");
-            label.textContent = replaceEszett(richTextbox.value);
-        }
-    </script>
+    <script src="/script.js"></script>
 </html>

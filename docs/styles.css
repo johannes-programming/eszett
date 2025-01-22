@@ -1,0 +1,8 @@
+
+textarea.eszett {
+    height: 20em; 
+    style: "display: block;";
+    width: 100%;
+    overflow-wrap: break-word; /* Prevent breaking in the middle of words */
+    white-space: pre-wrap; /* Preserve line breaks and spaces */
+}
