@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "eszett",
   "version": "1.0.0",
-  "description": "Replaces uppercase ẞ with SS and lowercase ß with ss on pages you visit.",
+  "description": "This extension replaces the german letter eszett with two s everywhere.",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
