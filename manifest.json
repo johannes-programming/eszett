@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Eszett Replacer (ẞ/ß → SS/ss)",
+  "version": "1.0.0",
+  "description": "Replaces uppercase ẞ with SS and lowercase ß with ss on pages you visit.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
