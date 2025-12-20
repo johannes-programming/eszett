@@ -15,22 +15,22 @@ function processTextNode(node) {
     }
 }
 
+function acceptTextNode(node) {
+    // Skip script/style/noscript and a few common non-visible areas
+    const p = node.parentElement;
+    if (!p) { return NodeFilter.FILTER_REJECT; }
+    const tag = p.tagName;
+    if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") {
+        return NodeFilter.FILTER_REJECT;
+    }
+    return NodeFilter.FILTER_ACCEPT;
+}
+
 function walkAndProcess(root) {
     const walker = document.createTreeWalker(
         root,
         NodeFilter.SHOW_TEXT,
-        {
-            acceptNode(node) {
-                // Skip script/style/noscript and a few common non-visible areas
-                const p = node.parentElement;
-                if (!p) { return NodeFilter.FILTER_REJECT; }
-                const tag = p.tagName;
-                if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") {
-                    return NodeFilter.FILTER_REJECT;
-                }
-                return NodeFilter.FILTER_ACCEPT;
-            }
-        }
+        { acceptNode: acceptTextNode }
     );
 
     let n;
@@ -114,6 +114,14 @@ function mutationObserver(mutations) {
     }
 }
 
+function processDocumentTitle() {
+    const oldTitle = document.title;
+    const newTitle = replaceEszett(oldTitle);
+    if (newTitle !== oldTitle) {
+        document.title = newTitle;
+    }
+}
+
 function main() {
     // Process tab title + everything visible
     if (document.head) { 
@@ -122,6 +130,7 @@ function main() {
     if (document.body) {
         walkAndProcess(document.body);
     }
+    processDocumentTitle();
     document.querySelectorAll(queryline).forEach(processEditable);
 
     // Keep up with changes
