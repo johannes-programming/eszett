@@ -12,10 +12,10 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "eszett@johannes-programming.online"
+      "id": "eszett@johannes-programming.online",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
-  },
-  "data_collection_permissions": {
-    "collects_data": false
   }
 }
