@@ -2,8 +2,7 @@
 eszett
 ======
 
-This project provides a website in the docs directory that replaces the eszett with double s.
-
+This project is all about replacing the letter eszett with double s.
 Credits
 -------
 
