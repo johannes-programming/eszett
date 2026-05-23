@@ -10,8 +10,8 @@ function replaceEszett(str) {
 function processTextNode(node) {
     const oldText = node.nodeValue;
     const newText = replaceEszett(oldText);
-    if (newText !== oldText) { 
-        node.nodeValue = newText; 
+    if (newText !== oldText) {
+        node.nodeValue = newText;
     }
 }
 
@@ -124,7 +124,7 @@ function processDocumentTitle() {
 
 function main() {
     // Process tab title + everything visible
-    if (document.head) { 
+    if (document.head) {
         walkAndProcess(document.head); // includes <title>
     }
     if (document.body) {

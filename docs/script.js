@@ -1,4 +1,3 @@
-
 function beautify(text){
     text = replaceEszett(text);
     return text;
