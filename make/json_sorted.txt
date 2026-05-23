@@ -1,0 +1,14 @@
+--sort
+--sort
+--key=browser_specific_settings
+--sort
+--key=browser_specific_settings
+--key=gecko
+--sort
+--key=browser_specific_settings
+--key=gecko
+--key=data_collection_permissions
+--sort
+--key=content_scripts
+--index=0
+src/eszett/manifest.json
